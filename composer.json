@@ -1,0 +1,24 @@
+{
+  "name": "pb/productaccessbygroup",
+  "description": "ProductAccessByGroup Module, to override default PrestaShop product component behaviour",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Paolo Battistella"
+    }
+  ],
+  "require": {
+    "php": ">=7.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "PB\\ProductAccessByGroup\\": "src/"
+    },
+    "exclude-from-classmap": []
+  },
+  "config": {
+    "preferred-install": "dist",
+    "prepend-autoloader": false
+  },
+  "type": "prestashop-module"
+}

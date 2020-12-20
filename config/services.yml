@@ -1,0 +1,6 @@
+services:
+  _defaults:
+    public: true
+
+  pb.exceptionhandler:
+    class: PB\ProductAccessByGroup\Exception\ExceptionHandler

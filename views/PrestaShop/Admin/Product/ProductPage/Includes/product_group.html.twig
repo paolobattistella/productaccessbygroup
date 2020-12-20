@@ -1,0 +1,37 @@
+{% if not multi_shop_context %}
+<div class="row">
+    <div class="col-md-12">
+        <h2>{{ "Group access"|trans({}, 'Admin.Catalog.Feature') }}</h2>
+        <p class="subtitle">{{ 'Mark all of the customer groups which you would like to have access to this product.'|trans({}, 'Modules.Productaccessbygroup.Admin') }}</p>
+    </div>
+</div>
+<div class="row form-group">
+    <div class="col-md-6">
+        <div class="choice-table">
+
+            <input type="hidden" name="group_association[]" value="0" />
+            <table class="table table-bordered mb-0">
+                <tbody>
+                    {% for group in shop_groups %}
+                    <tr>
+                        <td>
+                            <div class="checkbox">
+                                <div class="md-checkbox md-checkbox-inline">
+                                    <label>
+                                        <input type="checkbox" id="group_association_{{ group.id_group }}"
+                                               name="group_association[]" value="{{ group.id_group }}"
+                                               {{ group.id_group in product_groups ? 'checked="checked"' : '' }}
+                                        />
+                                        <i class="md-checkbox-control"></i>{{ group.name }}
+                                    </label>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endif %}
